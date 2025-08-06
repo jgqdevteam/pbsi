@@ -1,6 +1,7 @@
 
 html, body{
     /* background-color: rgb(0, 71, 33); */
+    background-color: #035108;
     background: linear-gradient(to right, #035108, #469d1a);
     height: 100%;
     margin: 0;

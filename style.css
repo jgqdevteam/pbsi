@@ -1,58 +1,95 @@
-
-html, body{
-    /* background-color: rgb(0, 71, 33); */
-    background-color: #035108;
-    background: linear-gradient(to right, #035108, #469d1a);
-    height: 100%;
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.div-header{
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+}
+
+/* Grid layout */
+.layout {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    grid-template-rows: 60px 1fr;
+    grid-template-areas:
+        "sidebar topbar"
+        "sidebar content";
+    height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    grid-area: sidebar;
+    background-color: #01601c;
     color: white;
+    padding-top: 20px;
+    overflow-y: auto;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.pbsilogo {
+height: 80px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 2px yellow) 
+            drop-shadow(0 0 2px yellow) 
+            drop-shadow(0 0 2px yellow);
+}
+
+.sidebar nav ul {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.sidebar nav ul li a {
+    display: block;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: #ccc;
+    transition: background-color 0.3s;
+}
+
+.sidebar nav ul li.active a,
+.sidebar nav ul li a:hover {
+    background-color: #e2e9009a;
+    color: white;
+}
+
+/* Top bar */
+.topbar {
+    grid-area: topbar;
+    background-color: #013b1db1;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.pbsiname {
+    font-size: 1.1rem;
+    font-weight: bold;
     text-align: center;
-    text-transform:uppercase;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0%;
-    padding: 0%;
-  }
-
-.div-subheader{
-  color: white;
-    text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-   
-  }
-
-  .p-subheader{
-    margin: 0%;
-    padding-bottom: 1%;
-  }
-  .h1-header{
-    margin-bottom: 0%;
-    padding-top: 1%;
-  }
-
-.footer{
-  text-align: center;
-  color: rgb(255, 255, 255);
-  padding: 15px;
 }
 
-.worker {
-    height: 25%;
-    width: 50%;
-    margin-left: 25%;
+/* Content */
+.content {
+    grid-area: content;
+    padding: 20px;
+    overflow-y: auto;
 }
 
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  background-color: white;
+.subtitle {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 10px;
 }
 
-.div-red{
-    background-color: rgb(192, 0, 0);
-    height: 10px;
-    width: auto;
-}
